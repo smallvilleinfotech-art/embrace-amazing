@@ -32,7 +32,7 @@ button{font-family:inherit;cursor:pointer}
 ::selection{background:rgba(255,203,5,.18)}
 
 /* ===== CARD — elevated executive surface ===== */
-.card{background:var(--panel);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-sm);border:1px solid var(--border);position:relative;transition:box-shadow .25s ease,transform .25s ease}
+.card{background:var(--panel);border-radius:14px;padding:16px;box-shadow:var(--shadow-sm);border:1px solid var(--border);position:relative;transition:box-shadow .25s ease,transform .25s ease}
 .card.lift:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
 
 /* ===== Buttons ===== */
@@ -44,10 +44,10 @@ button{font-family:inherit;cursor:pointer}
 .badge{border-radius:20px;padding:4px 12px;font-size:12px;font-weight:800;letter-spacing:.2px;display:inline-flex;align-items:center;gap:5px}
 
 /* ===== Tab bar — refined segmented / pill navigation ===== */
-.tab-btn{border:none;padding:11px 18px;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s ease;white-space:nowrap;border-bottom:3px solid transparent;position:relative}
-.tab-btn.active{background:rgba(255,255,255,.14);color:#fff;border-bottom-color:var(--gold)}
-.tab-btn:not(.active){background:transparent;color:rgba(255,255,255,.62)}
-.tab-btn:not(.active):hover{color:#fff;background:rgba(255,255,255,.06)}
+.tab-btn{border:none;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer;transition:all .2s ease;white-space:nowrap;border-bottom:3px solid transparent;position:relative}
+.tab-btn.active{background:rgba(0,0,0,.06);color:#000;border-bottom-color:var(--gold)}
+.tab-btn:not(.active){background:transparent;color:rgba(0,0,0,.55)}
+.tab-btn:not(.active):hover{color:#000;background:rgba(0,0,0,.04)}
 
 /* ===== Inputs ===== */
 input[type=text],input[type=email],input[type=password],input[type=number],input[type=tel],select{padding:11px 14px;border-radius:11px;border:1.5px solid var(--border);font-size:14px;width:100%;transition:border .2s,box-shadow .2s;background:#fcfdfc}
@@ -59,37 +59,37 @@ input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(2
 /* ===== EXECUTIVE UI KIT (shared across admin + contestant) ===== */
 .hero-card{
   background:linear-gradient(150deg,var(--primaryDk) 0%,var(--primary) 55%,#000000 100%);
-  border-radius:22px;padding:26px 24px;color:#fff;position:relative;overflow:hidden;
-  box-shadow:0 16px 40px rgba(74,53,18,.28);border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;padding:14px 18px;color:#fff;position:relative;overflow:hidden;
+  box-shadow:0 10px 24px rgba(74,53,18,.22);border:1px solid rgba(255,255,255,.08);
 }
 .hero-card::before{content:'';position:absolute;inset:0;background:
     radial-gradient(circle at 85% -10%, rgba(237,165,21,.25), transparent 55%),
     radial-gradient(circle at -5% 110%, rgba(255,255,255,.08), transparent 45%);
   pointer-events:none;}
 .hero-avatar{
-  width:74px;height:74px;border-radius:18px;background:linear-gradient(160deg,var(--gold2),var(--gold));
+  width:46px;height:46px;border-radius:13px;background:linear-gradient(160deg,var(--gold2),var(--gold));
   display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;
-  font-size:26px;color:#1a1a1a;flex-shrink:0;box-shadow:0 6px 18px rgba(0,0,0,.25);border:2px solid rgba(255,255,255,.35);
+  font-size:19px;color:#1a1a1a;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,.22);border:2px solid rgba(255,255,255,.35);
 }
 .role-chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:20px;
-  padding:4px 12px;font-size:11px;font-weight:800;letter-spacing:.5px;backdrop-filter:blur(6px);display:inline-flex;align-items:center;gap:6px}
+  padding:3px 10px;font-size:10.5px;font-weight:800;letter-spacing:.5px;backdrop-filter:blur(6px);display:inline-flex;align-items:center;gap:6px}
 
-.stat-chip{background:var(--panel-soft);border:1px solid var(--border);border-radius:16px;padding:14px 12px;text-align:center;
+.stat-chip{background:var(--panel-soft);border:1px solid var(--border);border-radius:12px;padding:9px 8px;text-align:center;
   transition:transform .2s ease,box-shadow .2s ease;}
 .stat-chip:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.stat-chip .si{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;
-  font-size:17px;margin:0 auto 8px;box-shadow:0 4px 10px rgba(0,0,0,.10)}
-.stat-chip .sv{font-family:'Sora',sans-serif;font-weight:800;font-size:22px;line-height:1.1;color:var(--ink)}
-.stat-chip .sl{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.3px;margin-top:3px;text-transform:uppercase}
+.stat-chip .si{width:28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+  font-size:13px;margin:0 auto 5px;box-shadow:0 3px 8px rgba(0,0,0,.10)}
+.stat-chip .sv{font-family:'Sora',sans-serif;font-weight:800;font-size:17px;line-height:1.1;color:var(--ink)}
+.stat-chip .sl{font-size:9px;color:var(--muted);font-weight:700;letter-spacing:.3px;margin-top:2px;text-transform:uppercase}
 
 .avatar-circle{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;
   background:linear-gradient(150deg,#e3f3e8,#d3ede0);color:var(--primary);box-shadow:inset 0 0 0 2px rgba(255,203,5,.12)}
 
-.section-title{font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:var(--primaryDk);margin-bottom:14px;
+.section-title{font-family:'Sora',sans-serif;font-weight:700;font-size:13.5px;color:var(--primaryDk);margin-bottom:8px;
   display:flex;align-items:center;gap:8px;letter-spacing:.1px}
-.section-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.section-eyebrow{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
 
-.list-row{display:flex;align-items:center;gap:12px;padding:13px 6px;border-bottom:1px solid var(--border);transition:background .15s}
+.list-row{display:flex;align-items:center;gap:10px;padding:8px 6px;border-bottom:1px solid var(--border);transition:background .15s}
 .list-row:last-child{border-bottom:none}
 .list-row:hover{background:var(--panel-soft);border-radius:10px}
 
@@ -103,7 +103,7 @@ input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(2
 .exec-table tbody tr{transition:background .15s}
 .exec-table tbody tr:hover{background:var(--panel-soft)}
 
-.side-nav-wrap{background:linear-gradient(135deg,var(--primaryDk),#111111);}
+.side-nav-wrap{background:#ffffff;border-bottom:1px solid var(--border);}
 .top-bar{backdrop-filter:blur(10px)}
 
 /* ===== CAREER / MASTERY UI ===== */
@@ -256,6 +256,10 @@ tr:hover{background:#f0fff4!important}
   .tab-btn{padding:9px 12px;font-size:12px}
   table{font-size:12px!important}
   #pd-podium{gap:4px!important}
+  #a-dashboard div[style*="grid-template-columns:repeat(6,1fr)"]{grid-template-columns:repeat(3,1fr)!important}
+  #a-dashboard div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
+  #a-dashboard div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important}
+  #c-stats{grid-template-columns:repeat(2,1fr)!important}
 }
 @media (max-width: 380px){
   .pin-display{font-size:clamp(28px,11vw,48px);letter-spacing:3px}
@@ -592,18 +596,18 @@ html,body{overflow-x:hidden;max-width:100vw}
 
 <!-- ==================== CONTESTANT DASHBOARD ==================== -->
 <div class="screen" id="s-contestant">
-  <div class="top-bar" style="background:linear-gradient(120deg,var(--primaryDk),var(--primary) 65%,#000000);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 18px rgba(74,53,18,.22);position:relative;z-index:5">
+  <div class="top-bar" style="background:#ffffff;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,.08);position:relative;z-index:5">
     <div style="display:flex;align-items:center;gap:10px">
-      <span style="font-size:26px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))">🔥</span>
+      <span style="font-size:26px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))">🔥</span>
       <div>
-        <div class="font-display" style="font-size:14px;color:#fff;font-weight:800;letter-spacing:.2px">EMBRACE AMAZING</div>
-        <div style="font-size:9.5px;color:#bfe3cd;letter-spacing:2.4px;font-weight:700">BIBLE COMMUNITY</div>
+        <div class="font-display" style="font-size:14px;color:#000;font-weight:800;letter-spacing:.2px">EMBRACE AMAZING</div>
+        <div style="font-size:9.5px;color:var(--muted);letter-spacing:2.4px;font-weight:700">BIBLE COMMUNITY</div>
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:10px">
-      <span class="role-chip">👤 <span id="c-username"></span></span>
-      <a href="player-walkthrough.html" target="_blank" rel="noopener" class="gbtn" style="padding:8px 14px;font-size:12px;background:rgba(255,255,255,.16);text-decoration:none;color:#fff">📘 Guide</a>
-      <button class="gbtn" onclick="doLogout()" style="padding:8px 14px;font-size:12px;background:rgba(255,255,255,.16)">Logout</button>
+      <span class="role-chip" style="background:rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.14);color:#000">👤 <span id="c-username"></span></span>
+      <a href="player-walkthrough.html" target="_blank" rel="noopener" class="gbtn" style="padding:8px 14px;font-size:12px;background:rgba(0,0,0,.06);text-decoration:none;color:#000">📘 Guide</a>
+      <button class="gbtn" onclick="doLogout()" style="padding:8px 14px;font-size:12px;background:rgba(0,0,0,.06);color:#000">Logout</button>
     </div>
   </div>
   <div class="side-nav-wrap" style="display:flex;overflow-x:auto;gap:2px;padding:0 10px;box-shadow:inset 0 -1px 0 rgba(255,255,255,.06)">
@@ -614,14 +618,14 @@ html,body{overflow-x:hidden;max-width:100vw}
     <button class="tab-btn" onclick="cTab('c-reports',this)">📊 My Reports</button>
     <button class="tab-btn" onclick="cTab('c-profile',this)">🧭 Career</button>
   </div>
-  <div style="max-width:960px;margin:0 auto;padding:18px 16px 40px">
+  <div style="max-width:960px;margin:0 auto;padding:10px 16px 14px">
     <div id="c-overview">
       <div id="c-herocard"></div>
-      <div class="section-eyebrow" style="margin:20px 2px 8px">Your Numbers</div>
-      <div id="c-stats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px"></div>
-      <div class="card lift" style="margin-bottom:16px">
+      <div class="section-eyebrow" style="margin:10px 2px 6px">Your Numbers</div>
+      <div id="c-stats" style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:10px"></div>
+      <div class="card lift" style="margin-bottom:10px">
         <div class="section-title">📊 Performance Overview</div>
-        <div id="c-speedos" style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px"></div>
+        <div id="c-speedos" style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px"></div>
       </div>
       <div class="card lift" id="c-recentscores"></div>
     </div>
@@ -656,18 +660,18 @@ html,body{overflow-x:hidden;max-width:100vw}
 
 <!-- ==================== ADMIN PANEL ==================== -->
 <div class="screen" id="s-admin">
-  <div class="top-bar" style="background:linear-gradient(120deg,#111111,#111111 65%,#000000);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 18px rgba(74,53,18,.22);position:relative;z-index:5">
+  <div class="top-bar" style="background:#ffffff;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,.08);position:relative;z-index:5">
     <div style="display:flex;align-items:center;gap:10px">
-      <span style="font-size:26px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))">🔥</span>
+      <span style="font-size:26px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))">🔥</span>
       <div>
-        <div class="font-display" style="font-size:14px;color:#fff;font-weight:800;letter-spacing:.2px">EMBRACE AMAZING</div>
-        <div style="font-size:9.5px;color:#bfe3cd;letter-spacing:2.4px;font-weight:700">ADMIN CONTROL PANEL</div>
+        <div class="font-display" style="font-size:14px;color:#000;font-weight:800;letter-spacing:.2px">EMBRACE AMAZING</div>
+        <div style="font-size:9.5px;color:var(--muted);letter-spacing:2.4px;font-weight:700">ADMIN CONTROL PANEL</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:center">
       <span class="role-chip" style="background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1a1a;border-color:transparent">⚙️ Admin</span>
-      <a href="admin-walkthrough.html" target="_blank" rel="noopener" class="gbtn" style="padding:8px 14px;font-size:12px;background:rgba(255,255,255,.16);text-decoration:none;color:#fff">📘 Guide</a>
-      <button class="gbtn" onclick="doLogout()" style="padding:8px 14px;font-size:12px;background:rgba(255,255,255,.16)">Logout</button>
+      <a href="admin-walkthrough.html" target="_blank" rel="noopener" class="gbtn" style="padding:8px 14px;font-size:12px;background:rgba(0,0,0,.06);text-decoration:none;color:#000">📘 Guide</a>
+      <button class="gbtn" onclick="doLogout()" style="padding:8px 14px;font-size:12px;background:rgba(0,0,0,.06);color:#000">Logout</button>
     </div>
   </div>
   <div class="side-nav-wrap" style="display:flex;overflow-x:auto;gap:2px;padding:0 10px;box-shadow:inset 0 -1px 0 rgba(255,255,255,.06)">
@@ -680,7 +684,7 @@ html,body{overflow-x:hidden;max-width:100vw}
     <button class="tab-btn" onclick="aTab('a-bank',this)">💳 Bank Export</button>
     <button class="tab-btn" onclick="aTab('a-profile',this)">👤 My Profile</button>
   </div>
-  <div style="max-width:1160px;margin:0 auto;padding:18px 16px 40px">
+  <div style="max-width:1160px;margin:0 auto;padding:10px 16px 14px">
     <div id="a-dashboard"></div>
     <div id="a-users" style="display:none"></div>
     <div id="a-quizzes" style="display:none"></div>
@@ -2912,22 +2916,22 @@ function renderContestantOverview(){
   const hero=document.getElementById('c-herocard');
   if(hero){
     hero.innerHTML=`<div class="hero-card">
-      <div style="position:relative;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+      <div style="position:relative;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
         <div class="hero-avatar">${heroInitials||'🙏'}</div>
         <div style="flex:1;min-width:180px">
           <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-            <span class="font-display" style="font-size:20px;font-weight:800">${u.name||'Contestant'}</span>
+            <span class="font-display" style="font-size:16px;font-weight:800">${u.name||'Contestant'}</span>
             ${u.status==='approved'?'<span class="role-chip">✅ Approved</span>':'<span class="role-chip">⏳ Pending</span>'}
           </div>
-          <div style="font-size:12px;color:rgba(255,255,255,.75);margin-top:4px">${u.email||''}</div>
-          <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <div style="font-size:11px;color:rgba(255,255,255,.75);margin-top:2px">${u.email||''}</div>
+          <div style="display:flex;gap:8px;margin-top:7px;flex-wrap:wrap">
             ${mastery!==null?`<span class="role-chip">🧭 ${mastery} Bible Mastery</span>`:''}
             <span class="role-chip">🏆 ${myRank>0?'Rank #'+myRank:'Unranked'}</span>
             <span class="role-chip">📖 ${myScores.length} quizzes played</span>
             <span class="role-chip">✅ ${acc}% accuracy</span>
           </div>
         </div>
-        ${mastery!==null?`<button class="gbtn" onclick="cTab('c-profile',document.querySelectorAll('#s-contestant .tab-btn')[5])" style="background:rgba(255,255,255,.18);padding:9px 16px;font-size:12.5px">View Quiz Career →</button>`:''}
+        ${mastery!==null?`<button class="gbtn" onclick="cTab('c-profile',document.querySelectorAll('#s-contestant .tab-btn')[5])" style="background:rgba(255,255,255,.18);padding:7px 14px;font-size:12px">View Quiz Career →</button>`:''}
       </div>
     </div>`;
   }
@@ -3429,7 +3433,7 @@ function goContestant(){goTo('s-contestant');renderContestantOverview();cTab('c-
 //  QUIZ ENGINE (solo + live player)
 // =====================================================================
 function startQuiz(qid){
-  activeQuiz=quizzes.find(q=>q.id===qid||q.id===String(qid));
+  activeQuiz=quizzes.find(q=>String(q.id)===String(qid));
   if(!activeQuiz||!activeQuiz.questions||activeQuiz.questions.length===0)return notify('Quiz not available','error');
   quizState={currentQ:0,timeLeft:activeQuiz.questions[0].time,answered:null,score:0,results:[],phase:'question',isLive:false,finished:false};
   document.getElementById('q-livebar').style.display='none';
@@ -3484,7 +3488,9 @@ function renderQuizQuestion(){
       <div style="display:flex;flex-direction:column;justify-content:center;gap:18px;height:100%;padding:0 clamp(10px,4vw,60px)">
         <div style="text-align:center;font-size:clamp(30px,6vw,48px);font-weight:900;color:#FFCB05" id="q-slider-value">${mid}</div>
         <input id="q-slider-input" type="range" min="${q.sliderMin||0}" max="${q.sliderMax||100}" step="${q.sliderStep||1}" value="${mid}"
-          oninput="document.getElementById('q-slider-value').textContent=this.value" style="width:100%"/>
+          oninput="document.getElementById('q-slider-value').textContent=this.value"
+          onmousedown="sliderClickToPosition(event,this)" ontouchstart="sliderClickToPosition(event,this)"
+          style="width:100%"/>
         <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.6)">
           <span>${q.sliderMin||0}</span><span>${q.sliderMax||100}</span>
         </div>
@@ -3714,6 +3720,24 @@ function answerTypeText(){
   finalizeAnswer(q,isCorrect,earned,raw||'(no answer)',q.acceptedAnswers&&q.acceptedAnswers[0]||'—',raw||null,true);
 }
 // --- Slider ---
+// Native <input type=range> only reliably moves on drag in a lot of
+// browsers (mobile Safari especially) — a plain tap on the track often
+// does nothing, which is exactly what "slider not responding to clicks"
+// looks like. This computes the tapped/clicked position directly and
+// sets the value there, so a single tap works the same as a drag.
+function sliderClickToPosition(event,input){
+  const rect=input.getBoundingClientRect();
+  const clientX=event.touches?event.touches[0].clientX:event.clientX;
+  let pct=(clientX-rect.left)/rect.width;
+  pct=Math.max(0,Math.min(1,pct));
+  const min=Number(input.min),max=Number(input.max),step=Number(input.step)||1;
+  let val=min+pct*(max-min);
+  val=Math.round(val/step)*step;
+  val=Math.max(min,Math.min(max,val));
+  input.value=val;
+  const disp=document.getElementById('q-slider-value');
+  if(disp)disp.textContent=val;
+}
 function answerSlider(){
   if(!quizState||quizState.phase!=='question')return;
   const q=activeQuiz.questions[quizState.currentQ];
@@ -3960,13 +3984,13 @@ function renderAdminDashboard(){
   const lb=getLeaderboard(),app=getApproved(),pend=getPending(),flag=getFlagged(),all=users.filter(u=>u.role==='contestant');
   const avg=app.length>0?Math.round(app.reduce((s,u)=>s+(u.totalScore||0),0)/app.length):0;
   document.getElementById('a-dashboard').innerHTML=`
-    <div class="hero-card" style="margin-bottom:20px">
-      <div style="position:relative;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+    <div class="hero-card" style="margin-bottom:10px">
+      <div style="position:relative;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
         <div class="hero-avatar">⚙️</div>
         <div style="flex:1;min-width:200px">
-          <div class="font-display" style="font-size:19px;font-weight:800">Control Center</div>
-          <div style="font-size:12.5px;color:rgba(255,255,255,.78);margin-top:3px">Live snapshot of contestants, quizzes and platform health</div>
-          <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <div class="font-display" style="font-size:15px;font-weight:800">Control Center</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.78);margin-top:1px">Live snapshot of contestants, quizzes and platform health</div>
+          <div style="display:flex;gap:8px;margin-top:7px;flex-wrap:wrap">
             <span class="role-chip">👥 ${all.length} contestants</span>
             <span class="role-chip">📖 ${quizzes.length} quizzes</span>
             <span class="role-chip">⭐ ${avg.toLocaleString()} avg score</span>
@@ -3974,8 +3998,8 @@ function renderAdminDashboard(){
         </div>
       </div>
     </div>
-    <div class="section-eyebrow" style="margin:0 2px 8px">Key Metrics</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px">
+    <div class="section-eyebrow" style="margin:0 2px 5px">Key Metrics</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:10px">
       ${[['👥','Contestants',all.length,'linear-gradient(150deg,#dcefe4,#FFCB05)'],['✅','Approved',app.length,'linear-gradient(150deg,#dcefe4,#1a7a4a)'],['⏳','Pending',pend.length,'linear-gradient(150deg,#ffe9c2,#c67c0e)'],['⚠️','Flagged',flag.length,'linear-gradient(150deg,#fbdcd6,#c0392b)'],['📖','Quizzes',quizzes.length,'linear-gradient(150deg,#d7ecff,#1a1a1a)'],['⭐','Avg Score',avg.toLocaleString(),'linear-gradient(150deg,#ffe6a8,#FFCB05)']].map(([icon,l,v,grad])=>`
         <div class="stat-chip">
           <div class="si" style="background:${grad};color:#fff">${icon}</div>
@@ -3983,22 +4007,22 @@ function renderAdminDashboard(){
           <div class="sl">${l}</div>
         </div>`).join('')}
     </div>
-    <div class="section-eyebrow" style="margin:0 2px 8px">Insights</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:18px">
+    <div class="section-eyebrow" style="margin:0 2px 5px">Insights</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px">
       <div class="card lift">
         <div class="section-title">🏆 Top 5 Scores</div>
-        <div style="position:relative;height:220px"><canvas id="ch-top5"></canvas></div>
+        <div style="position:relative;height:120px"><canvas id="ch-top5"></canvas></div>
       </div>
       <div class="card lift">
         <div class="section-title">👥 User Status</div>
-        <div style="position:relative;height:220px"><canvas id="ch-status"></canvas></div>
+        <div style="position:relative;height:120px"><canvas id="ch-status"></canvas></div>
       </div>
       <div class="card lift">
         <div class="section-title">📈 Quiz Participation</div>
-        <div style="position:relative;height:220px"><canvas id="ch-trend"></canvas></div>
+        <div style="position:relative;height:120px"><canvas id="ch-trend"></canvas></div>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
       <div class="card lift">
         <div class="section-title">🎯 Performance Meters</div>
         <div style="display:flex;justify-content:space-around">
@@ -4006,12 +4030,12 @@ function renderAdminDashboard(){
           ${makeSpeedo(app.filter(u=>u.scores&&u.scores.length>0).length,Math.max(app.length,1),'Participation','var(--secondary)')}
         </div>
       </div>
-      <div class="card lift">
+      <div class="card lift" style="max-height:170px;overflow-y:auto">
         <div class="section-title">⚠️ Flagged Users</div>
-        ${flag.length===0?'<div style="color:var(--muted);font-size:14px">No flagged users 🎉</div>':flag.map((u,i,arr)=>`
+        ${flag.length===0?'<div style="color:var(--muted);font-size:13px">No flagged users 🎉</div>':flag.map((u,i,arr)=>`
           <div class="list-row" style="${i===arr.length-1?'border-bottom:none':''}">
-            <div class="avatar-circle" style="width:34px;height:34px;font-size:13px;background:linear-gradient(150deg,#fbdcd6,#f3c1b8);color:var(--danger)">${(u.name||'?')[0]}</div>
-            <div style="flex:1;min-width:0"><div style="font-weight:700;font-size:13.5px">${u.name}</div><div style="color:var(--muted);font-size:12px">${u.email}</div></div>
+            <div class="avatar-circle" style="width:28px;height:28px;font-size:11px;background:linear-gradient(150deg,#fbdcd6,#f3c1b8);color:var(--danger)">${(u.name||'?')[0]}</div>
+            <div style="flex:1;min-width:0"><div style="font-weight:700;font-size:12.5px">${u.name}</div><div style="color:var(--muted);font-size:11px">${u.email}</div></div>
             <span class="pill-status" style="background:#fde8e8;color:var(--danger)"><span class="dot"></span>Flagged</span>
           </div>`).join('')}
       </div>
