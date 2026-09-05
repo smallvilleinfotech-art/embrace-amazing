@@ -126,7 +126,7 @@ input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(2
 .subtab-btn:not(.active):hover{border-color:var(--primary);color:var(--primaryDk)}
 .subtab-panel{display:none}
 .subtab-panel.active{display:block}
-.opt-btn{border:none;border-radius:18px;padding:clamp(18px,4vh,30px) 20px;color:#fff;font-size:clamp(16px,3vw,22px);font-weight:800;cursor:pointer;text-align:left;display:flex;align-items:center;gap:14px;transition:all .3s;width:100%;height:100%;min-height:clamp(90px,22vh,180px);box-shadow:0 4px 14px rgba(0,0,0,.18);
+.opt-btn{border:none;border-radius:16px;padding:clamp(10px,2.2vh,20px) 16px;color:#fff;font-size:clamp(13px,2.4vw,19px);font-weight:800;cursor:pointer;text-align:left;display:flex;align-items:center;gap:10px;transition:all .3s;width:100%;height:100%;min-height:clamp(56px,15vh,130px);box-shadow:0 4px 14px rgba(0,0,0,.18);
   text-shadow:-1.5px -1.5px 0 rgba(0,0,0,.55),1.5px -1.5px 0 rgba(0,0,0,.55),-1.5px 1.5px 0 rgba(0,0,0,.55),1.5px 1.5px 0 rgba(0,0,0,.55),0 2px 6px rgba(0,0,0,.3)}
 .opt-btn:hover:not(:disabled){transform:scale(1.02);box-shadow:0 8px 22px rgba(0,0,0,.28)}
 .opt-btn:hover:not(:disabled){filter:brightness(1.12);transform:scale(1.02)}
@@ -439,51 +439,51 @@ html,body{overflow-x:hidden;max-width:100vw}
 </div>
 
 <!-- ==================== QUIZ SCREEN (solo + live) ==================== -->
-<div class="screen" id="s-quiz" style="background:linear-gradient(135deg,#111111,#FFCB05);min-height:100dvh;color:#fff;position:relative;display:none;flex-direction:column">
+<div class="screen" id="s-quiz" style="background:linear-gradient(135deg,#111111,#FFCB05);height:100dvh;overflow-y:auto;overflow-x:hidden;color:#fff;position:relative;display:none;flex-direction:column">
   <!-- Compact top bar -->
-  <div style="padding:10px 16px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.25);flex-shrink:0">
-    <div style="font-weight:800;font-size:13px;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="q-quizname">Quiz Name</div>
-    <div style="display:flex;gap:8px;align-items:center">
-      <div id="q-score" style="background:rgba(255,255,255,.18);border-radius:20px;padding:5px 14px;font-weight:700;font-size:13px">⭐ 0</div>
-      <div id="q-progress" style="background:rgba(255,255,255,.18);border-radius:20px;padding:5px 14px;font-weight:700;font-size:13px">1/5</div>
-      <button id="q-endsolo-btn" onclick="playerEndSoloQuizEarly()" style="display:none;background:rgba(198,40,40,.65);border:none;color:#fff;border-radius:20px;padding:5px 14px;font-weight:700;font-size:12px;cursor:pointer">🛑 End Quiz</button>
+  <div style="padding:6px 14px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.25);flex-shrink:0">
+    <div style="font-weight:800;font-size:12px;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="q-quizname">Quiz Name</div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <div id="q-score" style="background:rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-weight:700;font-size:12px">⭐ 0</div>
+      <div id="q-progress" style="background:rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-weight:700;font-size:12px">1/5</div>
+      <button id="q-endsolo-btn" onclick="playerEndSoloQuizEarly()" style="display:none;background:rgba(198,40,40,.65);border:none;color:#fff;border-radius:20px;padding:4px 12px;font-weight:700;font-size:11px;cursor:pointer">🛑 End Quiz</button>
     </div>
   </div>
   <!-- Timer bar (full-width progress strip) -->
-  <div style="height:8px;background:rgba(255,255,255,.15);flex-shrink:0;position:relative">
+  <div style="height:6px;background:rgba(255,255,255,.15);flex-shrink:0;position:relative">
     <div id="q-timerfill" style="height:100%;background:linear-gradient(90deg,#FFCB05,#000000);transition:width 1s linear;width:100%"></div>
-    <div id="q-timerlabel" style="position:absolute;right:8px;top:-18px;font-size:11px;font-weight:700;color:rgba(255,255,255,.7)">20s</div>
+    <div id="q-timerlabel" style="position:absolute;right:8px;top:-16px;font-size:10px;font-weight:700;color:rgba(255,255,255,.7)">20s</div>
   </div>
 
   <!-- Live player count bar (only visible during live games) -->
-  <div id="q-livebar" style="display:none;background:rgba(0,0,0,.25);padding:6px 16px;align-items:center;gap:10px;flex-shrink:0">
-    <span style="font-size:12px;color:rgba(255,255,255,.6)">👥</span>
-    <span id="q-livecount" style="font-weight:700;color:#FFCB05;font-size:13px">0 players</span>
+  <div id="q-livebar" style="display:none;background:rgba(0,0,0,.25);padding:4px 14px;align-items:center;gap:8px;flex-shrink:0">
+    <span style="font-size:11px;color:rgba(255,255,255,.6)">👥</span>
+    <span id="q-livecount" style="font-weight:700;color:#FFCB05;font-size:12px">0 players</span>
     <div style="flex:1"></div>
-    <span id="q-liveanswered" style="font-size:12px;color:rgba(255,255,255,.5)">0 answered</span>
+    <span id="q-liveanswered" style="font-size:11px;color:rgba(255,255,255,.5)">0 answered</span>
   </div>
 
   <!-- Question stage — fills the viewport, Kahoot-style -->
-  <div style="flex:1;display:flex;flex-direction:column;padding:clamp(10px,2vw,24px);max-width:1200px;width:100%;margin:0 auto;min-height:0">
+  <div style="flex:1;display:flex;flex-direction:column;padding:clamp(6px,1.4vh,16px) clamp(8px,2vw,20px);max-width:1200px;width:100%;margin:0 auto;min-height:0;min-width:0;overflow:hidden">
     <div id="q-timerbar" style="display:none"></div><!-- kept for JS compat, hidden -->
-    <div style="background:rgba(255,255,255,.13);border-radius:18px;padding:clamp(16px,3vw,28px);margin-bottom:clamp(12px,2vh,20px);text-align:center;border:1px solid rgba(255,255,255,.2);flex-shrink:0">
-      <div id="q-qnum" style="font-size:13px;color:rgba(255,255,255,.65);margin-bottom:8px;letter-spacing:1px;text-transform:uppercase">Question 1 of 5</div>
-      <div id="q-qtext" class="text-outline" style="font-size:clamp(22px,4.5vw,36px);font-weight:800;line-height:1.3">Question text</div>
-      <div id="q-qimage-wrap" style="display:none;margin-top:16px">
-        <img id="q-qimage" src="" alt="" onerror="this.closest('#q-qimage-wrap').style.display='none'" style="max-width:100%;max-height:min(38vh,340px);border-radius:14px;object-fit:contain;box-shadow:0 8px 24px rgba(0,0,0,.3)"/>
+    <div style="background:rgba(255,255,255,.13);border-radius:16px;padding:clamp(8px,1.6vh,18px) clamp(12px,2.5vw,22px);margin-bottom:clamp(6px,1.2vh,14px);text-align:center;border:1px solid rgba(255,255,255,.2);flex-shrink:0;overflow:hidden">
+      <div id="q-qnum" style="font-size:11px;color:rgba(255,255,255,.65);margin-bottom:4px;letter-spacing:1px;text-transform:uppercase">Question 1 of 5</div>
+      <div id="q-qtext" class="text-outline" style="font-size:clamp(16px,3.4vh,30px);font-weight:800;line-height:1.25">Question text</div>
+      <div id="q-qimage-wrap" style="display:none;margin-top:8px">
+        <img id="q-qimage" src="" alt="" onerror="this.closest('#q-qimage-wrap').style.display='none'" style="max-width:100%;max-height:min(16vh,150px);border-radius:12px;object-fit:contain;box-shadow:0 8px 24px rgba(0,0,0,.3)"/>
       </div>
-      <div id="q-pts" style="font-size:13px;color:#FFCB05;margin-top:8px">⚡ Up to 1000 points</div>
+      <div id="q-pts" style="font-size:11.5px;color:#FFCB05;margin-top:4px">⚡ Up to 1000 points</div>
     </div>
     <!-- Answer area — content depends on question type (mcq/truefalse/type_answer/slider/puzzle) -->
-    <div id="q-opts" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.8vw,18px);flex:1;min-height:0"></div>
+    <div id="q-opts" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(6px,1.2vh,14px);flex:1;min-height:0;overflow-y:auto"></div>
     <!-- Result + waiting area -->
-    <div id="q-result" style="display:none;margin-top:16px;text-align:center;flex-shrink:0">
-      <div id="q-resultmsg" style="background:rgba(255,255,255,.15);border-radius:14px;padding:14px;margin-bottom:12px;font-size:17px;font-weight:700"></div>
-      <div id="q-answerbars" style="display:none;background:rgba(255,255,255,.08);border-radius:14px;padding:12px;margin-bottom:12px;text-align:left"></div>
-      <div id="q-waitinghost" style="display:none;background:rgba(255,255,255,.08);border-radius:14px;padding:14px;margin-bottom:12px;font-size:14px;color:rgba(255,255,255,.8)">
+    <div id="q-result" style="display:none;margin-top:8px;text-align:center;flex-shrink:0">
+      <div id="q-resultmsg" style="background:rgba(255,255,255,.15);border-radius:12px;padding:10px;margin-bottom:8px;font-size:15px;font-weight:700"></div>
+      <div id="q-answerbars" style="display:none;background:rgba(255,255,255,.08);border-radius:12px;padding:10px;margin-bottom:8px;text-align:left"></div>
+      <div id="q-waitinghost" style="display:none;background:rgba(255,255,255,.08);border-radius:12px;padding:10px;margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.8)">
         ⏳ Waiting for host to advance...
       </div>
-      <button class="gbtn" onclick="nextQuestion()" id="q-nextbtn" style="padding:15px 40px;font-size:16px;background:linear-gradient(135deg,#FFCB05,#000000);color:#fff">Next →</button>
+      <button class="gbtn" onclick="nextQuestion()" id="q-nextbtn" style="padding:12px 32px;font-size:15px;background:linear-gradient(135deg,#FFCB05,#000000);color:#fff">Next →</button>
     </div>
   </div>
 
@@ -3474,27 +3474,27 @@ function renderQuizQuestion(){
   if(type==='type_answer'){
     host.style.gridTemplateColumns='1fr';
     host.innerHTML=`
-      <div style="display:flex;flex-direction:column;justify-content:center;gap:16px;height:100%">
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%">
         <input id="q-typeanswer-input" type="text" placeholder="Type your answer..." autocomplete="off"
-          style="width:100%;padding:20px;font-size:clamp(18px,3.5vw,26px);border-radius:16px;border:2px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;text-align:center;font-weight:700"
+          style="width:100%;padding:14px;font-size:clamp(14px,2.6vw,20px);border-radius:14px;border:2px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;text-align:center;font-weight:700"
           onkeydown="if(event.key==='Enter')answerTypeText()"/>
-        <button class="gbtn" id="q-typeanswer-submit" onclick="answerTypeText()" style="padding:18px;font-size:18px;background:linear-gradient(135deg,#FFCB05,#000000);align-self:center;min-width:220px">Submit Answer</button>
+        <button class="gbtn" id="q-typeanswer-submit" onclick="answerTypeText()" style="padding:12px;font-size:15px;background:linear-gradient(135deg,#FFCB05,#000000);align-self:center;min-width:180px">Submit Answer</button>
       </div>`;
     setTimeout(()=>{const el=document.getElementById('q-typeanswer-input');if(el)el.focus();},50);
   } else if(type==='slider'){
     host.style.gridTemplateColumns='1fr';
     const mid=Math.round(((q.sliderMin||0)+(q.sliderMax||100))/2);
     host.innerHTML=`
-      <div style="display:flex;flex-direction:column;justify-content:center;gap:18px;height:100%;padding:0 clamp(10px,4vw,60px)">
-        <div style="text-align:center;font-size:clamp(30px,6vw,48px);font-weight:900;color:#FFCB05" id="q-slider-value">${mid}</div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:100%;padding:0 clamp(6px,3vw,40px)">
+        <div style="text-align:center;font-size:clamp(22px,4.5vw,36px);font-weight:900;color:#FFCB05" id="q-slider-value">${mid}</div>
         <input id="q-slider-input" type="range" min="${q.sliderMin||0}" max="${q.sliderMax||100}" step="${q.sliderStep||1}" value="${mid}"
           oninput="document.getElementById('q-slider-value').textContent=this.value"
           onmousedown="sliderClickToPosition(event,this)" ontouchstart="sliderClickToPosition(event,this)"
           style="width:100%"/>
-        <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.6)">
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.6)">
           <span>${q.sliderMin||0}</span><span>${q.sliderMax||100}</span>
         </div>
-        <button class="gbtn" id="q-slider-submit" onclick="answerSlider()" style="padding:18px;font-size:18px;background:linear-gradient(135deg,#FFCB05,#000000);align-self:center;min-width:220px">Submit Answer</button>
+        <button class="gbtn" id="q-slider-submit" onclick="answerSlider()" style="padding:12px;font-size:15px;background:linear-gradient(135deg,#FFCB05,#000000);align-self:center;min-width:180px">Submit Answer</button>
       </div>`;
   } else if(type==='puzzle'){
     host.style.gridTemplateColumns='1fr 1fr';
@@ -3505,7 +3505,7 @@ function renderQuizQuestion(){
     host.style.gridTemplateColumns='1fr 1fr';
     const labels=q.options&&q.options.length===2?q.options:['True','False'];
     host.innerHTML=labels.map((opt,i)=>`
-      <button class="opt-btn" onclick="answerQ(${i})" id="opt-${i}" style="justify-content:center;text-align:center;font-size:clamp(22px,5vw,32px);background:linear-gradient(135deg,${i===0?'#2e7d32,#1b5e20':'#C62828,#7f0000'})">
+      <button class="opt-btn" onclick="answerQ(${i})" id="opt-${i}" style="justify-content:center;text-align:center;font-size:clamp(16px,3.5vw,24px);background:linear-gradient(135deg,${i===0?'#2e7d32,#1b5e20':'#C62828,#7f0000'})">
         <span style="flex:none">${i===0?'✔️':'❌'} ${opt}</span>
       </button>`).join('');
   } else {
@@ -3514,8 +3514,8 @@ function renderQuizQuestion(){
     host.innerHTML=q.options.map((opt,i)=>`
       <button class="opt-btn" onclick="answerQ(${i})" id="opt-${i}"
         style="background:linear-gradient(135deg,${OPT_COLORS[i]},${OPT_COLORS[(i+2)%OPT_COLORS.length]}88);border:2px solid ${OPT_COLORS[i]}">
-        <span style="font-size:clamp(20px,5vw,28px);background:rgba(0,0,0,.2);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">${OPT_ICONS[i]}</span>
-        <span style="flex:1;line-height:1.3">${opt}</span>
+        <span style="font-size:clamp(14px,3.2vw,20px);background:rgba(0,0,0,.2);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">${OPT_ICONS[i]}</span>
+        <span style="flex:1;line-height:1.25">${opt}</span>
       </button>`).join('');
   }
   // Rotate question background gradient per question for variety
@@ -3772,15 +3772,15 @@ function renderPuzzleUI(){
   const shuffled=quizState.puzzleShuffled;
   const order=quizState.puzzleOrder||[];
   const chosenHtml=order.length===0
-    ?'<div style="opacity:.6;font-size:13px">Tap items below in the correct order...</div>'
-    :order.map((idx,pos)=>`<span style="background:rgba(255,203,5,.85);color:#1a1a1a;font-weight:800;border-radius:10px;padding:8px 14px;margin:3px;display:inline-block">${pos+1}. ${shuffled[idx]}</span>`).join('');
-  const remainingHtml=shuffled.map((item,idx)=>order.includes(idx)?'':`<button class="opt-btn" onclick="puzzleTapItem(${idx})" style="background:linear-gradient(135deg,${OPT_COLORS[idx%OPT_COLORS.length]},${OPT_COLORS[(idx+2)%OPT_COLORS.length]}88);border:2px solid ${OPT_COLORS[idx%OPT_COLORS.length]};min-height:70px;font-size:clamp(14px,2.6vw,18px)">${item}</button>`).join('');
+    ?'<div style="opacity:.6;font-size:12px">Tap items below in the correct order...</div>'
+    :order.map((idx,pos)=>`<span style="background:rgba(255,203,5,.85);color:#1a1a1a;font-weight:800;border-radius:8px;padding:5px 10px;margin:2px;display:inline-block;font-size:13px">${pos+1}. ${shuffled[idx]}</span>`).join('');
+  const remainingHtml=shuffled.map((item,idx)=>order.includes(idx)?'':`<button class="opt-btn" onclick="puzzleTapItem(${idx})" style="background:linear-gradient(135deg,${OPT_COLORS[idx%OPT_COLORS.length]},${OPT_COLORS[(idx+2)%OPT_COLORS.length]}88);border:2px solid ${OPT_COLORS[idx%OPT_COLORS.length]};min-height:44px;font-size:clamp(12px,2.2vw,16px);padding:8px 12px">${item}</button>`).join('');
   const host=document.getElementById('q-opts');
   if(host)host.innerHTML=`
-    <div style="grid-column:1/-1;background:rgba(255,255,255,.1);border-radius:14px;padding:14px;min-height:60px">${chosenHtml}</div>
-    <div style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:10px">${remainingHtml}</div>
+    <div style="grid-column:1/-1;background:rgba(255,255,255,.1);border-radius:12px;padding:8px;min-height:40px">${chosenHtml}</div>
+    <div style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:6px">${remainingHtml}</div>
     <div style="grid-column:1/-1;text-align:center">
-      <button class="gbtn" onclick="puzzleResetOrder()" style="padding:8px 18px;font-size:12px;background:rgba(255,255,255,.15)">↺ Reset order</button>
+      <button class="gbtn" onclick="puzzleResetOrder()" style="padding:6px 16px;font-size:11px;background:rgba(255,255,255,.15)">↺ Reset order</button>
     </div>`;
 }
 function answerPuzzleSubmit(){
